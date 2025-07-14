@@ -12,7 +12,7 @@ export default function Layout({
     <Nav>
       
       <div className="flex justify-between w-full items-center  h-25 gap-4  ">
-        <a href="/" className="relative inline-block mt-2 ml-5 " >
+        <a href="/admin" className="relative inline-block mt-2 ml-5 " >
             <p className=" rounded-4xl shadow-md shadow-gray-400
              font-mono font-bold  px-4 
              py-1.5 inline-block"> <img src={"/logo.png"} className=" h-12 w-full"/> 
@@ -29,6 +29,6 @@ export default function Layout({
         </div>
       </div>
     </Nav>
-    <div className="container mt-[100px]">{children}</div>
+    <div className="container p-5 mt-[100px]">{children}</div>
     </>
 }
