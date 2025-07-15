@@ -93,7 +93,7 @@ function Form({
         const orderExists = await userOrderExists(email, productId)
 
         if (orderExists) {
-            setErrorMessage("You have already ordered this product.Try downloading it from my orders page")
+            setErrorMessage("You have already ordered this product.")
             setIsLoading(false)
             return
         }
