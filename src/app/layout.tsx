@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn("bg-backgound min-h-screen font-sans antialiased", geistMono.variable)}
+        className={cn("bg-backgound min-h-screen font-sans antialiased w-auto", geistMono.variable)}
       >
         {children}
       </body>

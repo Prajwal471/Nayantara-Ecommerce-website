@@ -43,7 +43,7 @@ export async function ScrollingProductSectionWrapper() {
 
 
 export default function HomePage() {
-    return <main className="space-y-12 ">
+    return <main className="space-y-12  ">
         <HeroSection />
         <ProductGridSection title="Most Popular" productsFetcher={getMostPopularProduct} />
         <ProductGridSection title="Newest" productsFetcher={getNewestProduct} />
@@ -79,7 +79,8 @@ function ProductGridSection({ productsFetcher, title }: ProductGridSectionProps)
             </div>
 
             {/* Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 justify-items-center">
+
                 <Suspense
                     fallback={
                         <>

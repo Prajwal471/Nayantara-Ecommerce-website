@@ -240,3 +240,37 @@ html {
 .animate-scroll-x {
   animation: scroll-x 40s linear infinite;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out;
+}
+
+/* globals.css or add to Tailwind config with @apply */
+.premium-input {
+  @apply w-full rounded-xl border border-gray-300 px-4 py-2 text-base shadow-sm transition focus:outline-none focus:ring-2 focus:ring-black focus:border-black;
+}
+
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-x {
+  animation: scroll-x 20s linear infinite;
+}
+
+/* Speed up on mobile */
+@media (max-width: 768px) {
+  .animate-scroll-x {
+    animation-duration: 10s;
+  }
+}
