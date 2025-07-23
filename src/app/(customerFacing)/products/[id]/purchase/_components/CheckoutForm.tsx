@@ -76,12 +76,7 @@ function Form({ priceInCents, productId }: { priceInCents: number, productId: st
     const [isLoading, setIsLoading] = useState(false)
     const [errorMessage, setErrorMessage] = useState<string>()
     const [email, setEmail] = useState<string>()
-    const [address, setAddress] = useState({
-        line1: "",
-        city: "",
-        postal: "",
-        country: "",
-    })
+   
 
     async function handleSubmit(e: FormEvent) {
         e.preventDefault()
@@ -126,41 +121,7 @@ function Form({ priceInCents, productId }: { priceInCents: number, productId: st
                     <PaymentElement />
                     <LinkAuthenticationElement onChange={(e) => setEmail(e.value.email)} />
 
-                    {/* Address section - now 2 columns on mobile */}
-                    <div className="grid grid-cols-2 gap-4">
-                        <input
-                            type="text"
-                            placeholder="Address line"
-                            className="w-full border border-zinc-300 dark:border-zinc-600 rounded px-3 py-2 bg-transparent text-sm"
-                            value={address.line1}
-                            onChange={(e) => setAddress({ ...address, line1: e.target.value })}
-                            required
-                        />
-                        <input
-                            type="text"
-                            placeholder="City"
-                            className="w-full border border-zinc-300 dark:border-zinc-600 rounded px-3 py-2 bg-transparent text-sm"
-                            value={address.city}
-                            onChange={(e) => setAddress({ ...address, city: e.target.value })}
-                            required
-                        />
-                        <input
-                            type="text"
-                            placeholder="Postal Code"
-                            className="w-full border border-zinc-300 dark:border-zinc-600 rounded px-3 py-2 bg-transparent text-sm"
-                            value={address.postal}
-                            onChange={(e) => setAddress({ ...address, postal: e.target.value })}
-                            required
-                        />
-                        <input
-                            type="text"
-                            placeholder="Country"
-                            className="w-full border border-zinc-300 dark:border-zinc-600 rounded px-3 py-2 bg-transparent text-sm"
-                            value={address.country}
-                            onChange={(e) => setAddress({ ...address, country: e.target.value })}
-                            required
-                        />
-                    </div>
+                   
                 </CardContent>
 
                 <CardFooter>

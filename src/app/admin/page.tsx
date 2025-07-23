@@ -7,6 +7,13 @@ import {
 } from "@/components/ui/card";
 import db from "@/db/db";
 import { formatCurrency, formatNumber } from "@/lib/formatters";
+export const dynamic = "force-dynamic"
+
+const orders = await db.order.findMany({
+  orderBy: { createdAt: "desc" },
+  include: { product: true, user: true },
+})
+
 
 async function getSalesData() {
   const data = await db.order.aggregate({

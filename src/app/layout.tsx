@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 // app/fonts.ts or layout file
 import { Dancing_Script } from 'next/font/google';
+import { Footer } from "@/components/footer";
 
 export const dancingScript = Dancing_Script({
   subsets: ['latin'],
@@ -38,10 +39,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn("bg-backgound min-h-screen font-sans antialiased w-auto", geistMono.variable)}
+        className={cn(
+          "bg-background min-h-screen flex flex-col font-sans antialiased w-full",
+          geistMono.variable,
+          geistSans.variable,
+          dancingScript.variable
+        )}
       >
-        {children}
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
 }
+
