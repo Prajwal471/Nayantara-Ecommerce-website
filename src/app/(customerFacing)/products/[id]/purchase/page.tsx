@@ -6,9 +6,9 @@ import { CheckoutForm } from "./_components/CheckoutForm"
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 
 export default async function PurchasePage(props: {
-  params: { id: string }
+  params: { id: string } | Promise < {id:string}>
 }) {
-  const { id } = props.params
+  const { id } = await props.params
 
   const product = await db.product.findUnique({
     where: { id }

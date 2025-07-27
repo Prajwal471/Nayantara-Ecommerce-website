@@ -10,9 +10,10 @@ import { Button } from "@/components/ui/button"
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 
 export default async function SuccessPage(props: {
-  searchParams?: { payment_intent?: string }
+  searchParams?: { payment_intent?: string } | Promise <{ payment_intent?: string }>
 }) {
-  const payment_intent = props.searchParams?.payment_intent
+  const searchParams = await props.searchParams;
+  const payment_intent = searchParams?.payment_intent;
   if (!payment_intent) return notFound()
 
   const paymentIntent = await stripe.paymentIntents.retrieve(payment_intent)
