@@ -142,21 +142,6 @@ npm run build
 npm start
 ```
 
----
-
-## Screenshots
-
-Add screenshots of your site below to showcase the UI.
-
-![Home Page](images/screenshot1.png)
-*Landing page with featured products*
-
-![Product Detail](images/screenshot2.png)
-*Product detail page with image gallery and add-to-cart*
-
----
-
-
 
 ## License
 
